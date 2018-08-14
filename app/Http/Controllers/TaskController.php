@@ -14,7 +14,9 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        $tasks = task::all();
+
+return view('tasks.index',compact('tasks'));
     }
 
     /**
@@ -44,9 +46,11 @@ class TaskController extends Controller
      * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function show(Task $task)
+    public function show($id)
     {
-        //
+        $tasks = task::find($id);
+    
+    return view('tasks.show',compact('tasks'));
     }
 
     /**
