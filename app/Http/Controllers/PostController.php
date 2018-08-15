@@ -15,11 +15,11 @@ class PostController extends Controller
      * 
      * 
      */
-public function __construct(Post $posts )
+public function __construct(Post $post )
 
 {
 
-    $this->post = $posts; 
+    $this->post = $post; 
     
 }
 
@@ -62,7 +62,7 @@ public function __construct(Post $posts )
      */
     public function show(Post $post)
     {
-        //
+        return view('posts.show',compact('post'));
     }
 
     /**
