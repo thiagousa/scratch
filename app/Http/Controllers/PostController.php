@@ -11,10 +11,24 @@ class PostController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * 
+     * 
+     * 
      */
+public function __construct(Post $posts )
+
+{
+
+    $this->post = $posts; 
+    
+}
+
+
     public function index()
     {
-        return Post::all();
+        $posts = $this->post->all();
+
+        return view('posts.index',compact('posts'));
 
 
     }
