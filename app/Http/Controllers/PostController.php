@@ -40,7 +40,7 @@ public function __construct(Post $post )
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -51,7 +51,10 @@ public function __construct(Post $post )
      */
     public function store(Request $request)
     {
-        //
+        Post::create(request(['title','body']));
+
+        return redirect('/posts');
+    
     }
 
     /**
