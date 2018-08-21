@@ -36,3 +36,7 @@ Route::get('/task/{task}','TaskController@show');
 });
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
